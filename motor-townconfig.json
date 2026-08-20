@@ -1,0 +1,74 @@
+[
+    {
+        "DisplayName": "Server Executable",
+        "Category": "Motor Town:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Path to the dedicated-server executable, relative to the SteamCMD installation directory. Confirm the filename in the ReadMe.txt installed with the dedicated-server beta.",
+        "Keywords": "executable,server,launch",
+        "FieldName": "ServerExecutable",
+        "InputType": "text",
+        "ParamFieldName": "server executable",
+        "DefaultValue": "MotorTownDedicatedServer.exe",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Additional Server Arguments",
+        "Category": "Motor Town:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Optional arguments appended to the dedicated-server command. Use the installed ReadMe.txt as the source of truth for supported arguments.",
+        "Keywords": "arguments,launch,command,line",
+        "FieldName": "CustomArgs",
+        "InputType": "text",
+        "ParamFieldName": "additional server arguments",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Game Port",
+        "Category": "Motor Town:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Game traffic port. Forward TCP and UDP when hosting outside the local network.",
+        "Keywords": "port,game,network",
+        "FieldName": "$GamePort",
+        "InputType": "number",
+        "ParamFieldName": "game port",
+        "ExcludeFromImport": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Query Port",
+        "Category": "Motor Town:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Server query port. Forward TCP and UDP when hosting outside the local network.",
+        "Keywords": "port,query,network",
+        "FieldName": "$QueryPort",
+        "InputType": "number",
+        "ParamFieldName": "query port",
+        "ExcludeFromImport": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Dedicated Server Beta Branch",
+        "Category": "Updates",
+        "Subcategory": "Steam Downloads:download",
+        "Description": "Steam beta branch used for the dedicated server. The developer documentation currently specifies beta.",
+        "Keywords": "steam,beta,branch,dedicated,server",
+        "FieldName": "BetaBranch",
+        "InputType": "text",
+        "ParamFieldName": "beta branch",
+        "DefaultValue": "beta",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Dedicated Server Beta Password",
+        "Category": "Updates",
+        "Subcategory": "Steam Downloads:download",
+        "Description": "Steam beta password required by the developer for the dedicated-server branch. Do not share this value.",
+        "Keywords": "steam,beta,password,dedicated,server",
+        "FieldName": "BetaPassword",
+        "InputType": "Password",
+        "ParamFieldName": "beta password",
+        "DefaultValue": "motortowndedi",
+        "EnumValues": {}
+    }
+]
