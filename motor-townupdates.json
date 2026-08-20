@@ -10,6 +10,14 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Set Dedicated Server Executable Permission",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"chmod +x \\\"{{$FullBaseDir}}MotorTown/Binaries/Win64/MotorTownServer-Win64-Shipping.exe\\\"\"",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "SteamCMD Components Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SteamCMD",
