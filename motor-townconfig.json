@@ -58,17 +58,5 @@
         "ParamFieldName": "beta branch",
         "DefaultValue": "beta",
         "EnumValues": {}
-    },
-    {
-        "DisplayName": "Dedicated Server Beta Password",
-        "Category": "Updates",
-        "Subcategory": "Steam Downloads:download",
-        "Description": "Steam beta password required by the developer for the dedicated-server branch. Do not share this value.",
-        "Keywords": "steam,beta,password,dedicated,server",
-        "FieldName": "BetaPassword",
-        "InputType": "Password",
-        "ParamFieldName": "beta password",
-        "DefaultValue": "motortowndedi",
-        "EnumValues": {}
     }
 ]
