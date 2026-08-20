@@ -10,11 +10,21 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "SteamCMD Components Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1007",
+        "UpdateSourceArgs": "1369670",
+        "UpdateSourceTarget": "{{$FullBaseDir}}MotorTown/Binaries/Win64",
+        "ForceDownloadPlatform": "Windows",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Create Dedicated Server Configuration",
         "UpdateSourcePlatform": "All",
-        "UpdateSource": "CreateFile",
-        "UpdateSourceData": "{\n  \"ServerName\": \"AMP MotorTown Server\",\n  \"ServerMessage\": \"Welcome to MotorTown!\",\n  \"Password\": \"\",\n  \"MaxPlayers\": 10,\n  \"MaxVehiclePerPlayer\": 10,\n  \"bAllowPlayerToJoinWithCompanyVehicles\": false,\n  \"bAllowCompanyAIDriver\": true,\n  \"bAllowCorporation\": true,\n  \"bAllowCorporationAIDriver\": true,\n  \"MaxHousingPlotRentalPerPlayer\": 1,\n  \"MaxHousingPlotRentalDays\": 7,\n  \"HousingPlotRentalPriceRatio\": 0.1,\n  \"bAllowModdedVehicle\": false,\n  \"Rain\": 2,\n  \"Fire\": 2,\n  \"NPCVehicleDensity\": 1.0,\n  \"NPCPoliceDensity\": 1.0,\n  \"bEnableHostWebAPIServer\": false,\n  \"HostWebAPIServerPassword\": \"\",\n  \"HostWebAPIServerPort\": 8080,\n  \"HostWebAPIDisabledCommands\": [],\n  \"Admins\": [],\n  \"bAllowPoliceVehicleByPlayerRole\": false,\n  \"PoliceRolePlayers\": [],\n  \"bAllowAdminToRemoveAdmin\": false\n}",
-        "UpdateSourceArgs": "{{$FullRootDir}}DedicatedServerConfig.json",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}DedicatedServerConfig.json",
+        "UpdateSourceArgs": "{{$FullBaseDir}}DedicatedServerConfig_Sample.json",
         "OverwriteExistingFiles": false,
         "SkipOnFailure": false
     },
