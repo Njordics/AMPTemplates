@@ -14,7 +14,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\" || cp \\\"{{$FullRootDir}}DedicatedServerConfig_Sample.json\\\" \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"; test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"\"",
+        "UpdateSourceArgs": "-c \"test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\" || cp \\\"{{$FullBaseDir}}DedicatedServerConfig_Sample.json\\\" \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"; test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"\"",
         "SkipOnFailure": false
     },
     {
