@@ -58,5 +58,17 @@
         "ParamFieldName": "beta branch",
         "DefaultValue": "beta",
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Dedicated Server Beta Password",
+        "Category": "Updates",
+        "Subcategory": "Steam Downloads:download",
+        "Description": "Steam beta password required to download the Motor Town dedicated server. The published default is prefilled.",
+        "Keywords": "steam,beta,password,dedicated,server",
+        "FieldName": "BetaPassword",
+        "InputType": "Password",
+        "ParamFieldName": "beta password",
+        "DefaultValue": "motortowndedi",
+        "EnumValues": {}
     }
 ]
