@@ -11,19 +11,10 @@
     },
     {
         "UpdateStageName": "Create Dedicated Server Configuration",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/Njordics/AMPTemplates/main/motor-townDedicatedServerConfig.json",
-        "UpdateSourceArgs": "DedicatedServerConfig.json",
-        "OverwriteExistingFiles": false,
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Verify Dedicated Server Configuration",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"\"",
+        "UpdateSourceArgs": "-c \"test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\" || cp \\\"{{$FullRootDir}}DedicatedServerConfig_Sample.json\\\" \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"; test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"\"",
         "SkipOnFailure": false
     },
     {
