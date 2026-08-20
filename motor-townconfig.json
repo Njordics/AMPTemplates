@@ -8,7 +8,7 @@
         "FieldName": "ServerExecutable",
         "InputType": "text",
         "ParamFieldName": "server executable",
-        "DefaultValue": "MotorTownDedicatedServer.exe",
+        "DefaultValue": "MotorTown/Binaries/Win64/MotorTownServer-Win64-Shipping.exe",
         "EnumValues": {}
     },
     {
