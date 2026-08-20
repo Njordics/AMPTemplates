@@ -26,7 +26,7 @@ App.BaseDirectory=./motortown/2223650/
 App.ExecutableWin=2223650\MotorTown\Binaries\Win64\MotorTownServer-Win64-Shipping.exe
 App.ExecutableLinux=/usr/bin/xvfb-run
 App.WorkingDir=2223650
-App.LinuxCommandLineArgs=-a wine "MotorTown/Binaries/Win64/MotorTownServer-Win64-Shipping.exe"
+App.LinuxCommandLineArgs=-a wine "./MotorTown/Binaries/Win64/MotorTownServer-Win64-Shipping.exe"
 App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} Jeju_World?listen? -server -log -useperfthreads -Port={{$GamePort}} -QueryPort={{$QueryPort}} {{CustomArgs}}
 App.UseLinuxIOREDIR=False
