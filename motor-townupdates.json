@@ -10,6 +10,16 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Create Dedicated Server Configuration",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Njordics/AMPTemplates/main/motor-townDedicatedServerConfig.json",
+        "UpdateSourceArgs": "DedicatedServerConfig.json",
+        "UpdateSourceTarget": "{{$FullBaseDir}}MotorTown",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Initialise Wine",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
