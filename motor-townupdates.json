@@ -15,8 +15,16 @@
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://raw.githubusercontent.com/Njordics/AMPTemplates/main/motor-townDedicatedServerConfig.json",
         "UpdateSourceArgs": "DedicatedServerConfig.json",
-        "UpdateSourceTarget": "{{$FullBaseDir}}MotorTown",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Steam Runtime DLLs",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"for file in steamclient.dll steamclient64.dll tier0_s.dll tier0_s64.dll vstdlib_s.dll vstdlib_s64.dll; do if [[ -f \\\"{{$FullBaseDir}}$file\\\" ]]; then cp -f \\\"{{$FullBaseDir}}$file\\\" \\\"{{$FullBaseDir}}MotorTown/Binaries/Win64/\\\"; fi; done\"",
         "SkipOnFailure": false
     },
     {
