@@ -15,8 +15,15 @@
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://raw.githubusercontent.com/Njordics/AMPTemplates/main/motor-townDedicatedServerConfig.json",
         "UpdateSourceArgs": "DedicatedServerConfig.json",
-        "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Verify Dedicated Server Configuration",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"test -s \\\"{{$FullRootDir}}DedicatedServerConfig.json\\\"\"",
         "SkipOnFailure": false
     },
     {
