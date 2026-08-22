@@ -46,6 +46,17 @@
         "SkipOnFailure": true
     },
     {
+        "UpdateStageName": "Fetch MelonLoader",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "LavaGang/MelonLoader",
+        "UpdateSourceData": "MelonLoader.x64.zip",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Fetch S1DedicatedServers (IL2CPP)",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "GithubRelease",
