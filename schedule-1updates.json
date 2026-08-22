@@ -72,6 +72,22 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Create UserData Directory (Windows)",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/c mkdir \"{{$FullBaseDir}}UserData\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Create UserData Directory (Linux)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"mkdir -p \\\"{{$FullBaseDir}}UserData\\\"\"",
+        "SkipOnFailure": true
+    },
+    {
         "UpdateStageName": "Seed Default Server Configuration",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateFile",
