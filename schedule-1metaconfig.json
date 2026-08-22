@@ -1,0 +1,50 @@
+[
+    {
+        "ConfigFile": "UserData/server_config.toml",
+        "AutoMap": true,
+        "Importable": false,
+        "ConfigType": "ini",
+        "ConfigFormat": "{0} = {1}",
+        "Subsections": [
+            {
+                "Heading": "autosave",
+                "SettingMappings": {
+                    "autoSaveEnabled": "AutoSaveEnabled",
+                    "autoSaveIntervalMinutes": "AutoSaveIntervalMinutes",
+                    "autoSaveOnPlayerJoin": "AutoSaveOnPlayerJoin",
+                    "autoSaveOnPlayerLeave": "AutoSaveOnPlayerLeave"
+                }
+            },
+            {
+                "Heading": "gameplay",
+                "SettingMappings": {
+                    "ignoreGhostHostForSleep": "IgnoreGhostHostForSleep",
+                    "timeProgressionMultiplier": "TimeProgressionMultiplier",
+                    "allowSleeping": "AllowSleeping",
+                    "pauseGameWhenEmpty": "PauseGameWhenEmpty"
+                }
+            }
+        ]
+    },
+    {
+        "ConfigFile": "UserData/server_config.toml",
+        "AutoMap": true,
+        "Importable": false,
+        "ConfigType": "ini",
+        "ConfigFormat": "{0} = \"{1}\"",
+        "Subsections": [
+            {
+                "Heading": "storage",
+                "SettingMappings": {
+                    "saveGamePath": "SaveGamePath"
+                }
+            },
+            {
+                "Heading": "gameplay",
+                "SettingMappings": {
+                    "freshSaveQuestBootstrapMode": "FreshSaveQuestBootstrapMode"
+                }
+            }
+        ]
+    }
+]

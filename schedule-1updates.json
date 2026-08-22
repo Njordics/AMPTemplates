@@ -1,0 +1,67 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Download (IL2CPP - default branch)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "3164500",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceConditionSetting": "ServerRuntime",
+        "UpdateSourceConditionValue": "il2cpp",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download (Mono - alternate branch)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "3164500",
+        "UpdateSourceVersion": "alternate",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceConditionSetting": "ServerRuntime",
+        "UpdateSourceConditionValue": "mono",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Steam App ID File",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "3164500",
+        "UpdateSourceArgs": "{{$FullBaseDir}}steam_appid.txt",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Fetch S1DedicatedServers (IL2CPP)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "ifBars/S1DedicatedServers",
+        "UpdateSourceData": "Il2cpp_Server.zip",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "ServerRuntime",
+        "UpdateSourceConditionValue": "il2cpp",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Fetch S1DedicatedServers (Mono)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "ifBars/S1DedicatedServers",
+        "UpdateSourceData": "Mono-Server.zip",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "ServerRuntime",
+        "UpdateSourceConditionValue": "mono",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Seed Default Server Configuration",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "[server]\nmaxPlayers = 10\n\n[storage]\nsaveGamePath = ''\n\n[authentication]\nauthProvider = 'SteamGameServer'\nauthTimeoutSeconds = 60\nsteamGameServerLogOnAnonymous = true\nsteamGameServerQueryPort = 27016\nsteamGameServerMode = 'Authentication'\n\n[messaging]\nmessagingBackend = 'FishNetRpc'\n\n[autosave]\nautoSaveEnabled = true\nautoSaveIntervalMinutes = 15.0\nautoSaveOnPlayerJoin = true\nautoSaveOnPlayerLeave = true\n\n[gameplay]\nignoreGhostHostForSleep = true\ntimeProgressionMultiplier = 1.0\nallowSleeping = true\npauseGameWhenEmpty = false\nfreshSaveQuestBootstrapMode = 'StartFromBeginning'\n",
+        "UpdateSourceArgs": "{{$FullBaseDir}}UserData/server_config.toml",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    }
+]

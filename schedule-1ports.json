@@ -1,0 +1,30 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 38465,
+        "Ref": "GamePort",
+        "Name": "Game Port",
+        "Description": "UDP gameplay traffic (FishNet)."
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 38465,
+        "Ref": "GamePort",
+        "Name": "Game Port (Status Query)",
+        "Description": "DedicatedServerMod's lightweight TCP status query endpoint on the same numeric port."
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 27016,
+        "Ref": "QueryPort",
+        "Name": "Steam Query Port",
+        "Description": "Steam query/listing port, used when the SteamGameServer authentication provider is active."
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 4050,
+        "Ref": "TcpConsolePort",
+        "Name": "TCP Console Port",
+        "Description": "Optional remote admin TCP console. Only forward this if you enable it and bind beyond 127.0.0.1."
+    }
+]
