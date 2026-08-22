@@ -16,11 +16,14 @@ Templates in this section are works in progress and may require further testing 
 
 | Template | Status | Notes |
 | --- | --- | --- |
-| Schedule I | Needs testing | Windows dedicated server powered by the open-source [S1DedicatedServers / DedicatedServerMod](https://github.com/ifBars/S1DedicatedServers) (GPL-3.0). Fully automated update (SteamCMD + GitHub Releases) and fully configurable, but unverified against a real deployment (executable name, TOML config mapping, and console behavior are all best-effort). See notes below.
+| Schedule I | Needs testing | Windows dedicated server (runs through Wine on Linux hosts) powered by the open-source [S1DedicatedServers / DedicatedServerMod](https://github.com/ifBars/S1DedicatedServers) (GPL-3.0). Fully automated update (SteamCMD + GitHub Releases) and fully configurable, but unverified against a real deployment (executable name, TOML config mapping, Wine/MelonLoader behavior, and console output are all best-effort). See notes below.
 
 ### Schedule I notes
 
 - Requires a Steam account that owns Schedule I (SteamCMD login, not anonymous).
+- Uses the `cubecoders/ampbase:wine-stable` Docker image on Linux (same approach as the MotorTown template) so the Windows build runs under Wine. Set `Meta.DockerRequired`/container settings aside, Windows hosts run it natively.
+- **Mono is the recommended runtime under Wine.** IL2CPP additionally needs the .NET 6 x64 Desktop Runtime installed inside the Wine prefix (MelonLoader's IL2CPP requirement) - this is not automated here and may need a manual `protontricks <appid> dotnetdesktop6`-style step before the IL2CPP build will start on Linux.
+- MelonLoader hooks into the game via a `version.dll` proxy, so `WINEDLLOVERRIDES="version=n,b"` is set automatically for Linux - without it MelonLoader silently fails to load under Wine.
 - Every **Update** downloads the game via SteamCMD and fetches the matching `S1DedicatedServers` release build directly from GitHub Releases (`ifBars/S1DedicatedServers`) - no manual downloads or third-party site logins are needed, unlike the Nexus-hosted alternative mod.
 - The **Server Runtime** setting (Configuration tab) picks IL2CPP (default Schedule I branch) or Mono (`alternate` branch) - pick one and run an Update before first start.
 - Most settings (name, password, player limit, authentication, messaging backend, TCP console, performance, debug) are applied via command-line overrides, which take precedence over the config file.

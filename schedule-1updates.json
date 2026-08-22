@@ -30,6 +30,22 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Initialise Wine",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all /usr/bin/wineboot --init --update\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Steam Runtime DLLs",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"for file in steamclient.dll steamclient64.dll tier0_s.dll tier0_s64.dll vstdlib_s.dll vstdlib_s64.dll; do if [[ -f \\\"{{$FullRootDir}}$file\\\" ]]; then cp -f \\\"{{$FullRootDir}}$file\\\" \\\"{{$FullBaseDir}}\\\"; fi; done\"",
+        "SkipOnFailure": true
+    },
+    {
         "UpdateStageName": "Fetch S1DedicatedServers (IL2CPP)",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "GithubRelease",
